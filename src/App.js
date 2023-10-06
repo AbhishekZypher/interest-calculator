@@ -34,8 +34,17 @@ function App() {
     <div>
       <Header />
       <UserInput onCalculate={calculateHandler} />
-      {!userInput && <p>Nothing to display yet.</p>}
-      {userInput && <ResultsTable data={yearlyData} initialInvestment={userInput['current-savings']} />}
+      {!userInput &&
+        <p style={{ textAlign: 'center' }}>
+          Nothing to display yet.
+        </p>
+      }
+
+      {userInput &&
+        <ResultsTable data={yearlyData}
+          initialInvestment={userInput['current-savings']}
+        />
+      }
     </div>
   );
 }
